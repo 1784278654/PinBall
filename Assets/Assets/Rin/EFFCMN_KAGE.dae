@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<COLLADA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.4.1" xmlns="http://www.collada.org/2005/11/COLLADASchema">
+  <asset>
+    <created>2018-08-13T22:32:03.2051316-04:00</created>
+    <modified>2018-08-13T22:32:03.2051316-04:00</modified>
+  </asset>
+  <library_images>
+    <image id="f_diva_mik000_kage">
+      <init_from>./f_diva_mik000_kage.png</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="lambert318_mat_id" name="lambert318_mat">
+      <instance_effect url="#lambert318_eff_id" />
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="lambert318_eff_id" name="lambert318_eff">
+      <profile_COMMON>
+        <newparam sid="lambert318_surf">
+          <surface type="2D">
+            <init_from>f_diva_mik000_kage</init_from>
+            <format>PNG</format>
+          </surface>
+        </newparam>
+        <newparam sid="lambert318_samp">
+          <sampler2D>
+            <source>lambert318_surf</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>LINEAR_MIPMAP_NEAREST</minfilter>
+            <magfilter>LINEAR</magfilter>
+            <mipfilter>LINEAR</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="lambert318_tech">
+          <phong>
+            <diffuse>
+              <texture texture="lambert318_samp" texcoord="uv" />
+            </diffuse>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="pPlane2_0_0_geo_id" name="pPlane2_0_0">
+      <mesh>
+        <source id="pPlane2_0_0_Position_id" name="pPlane2_0_0_Position">
+          <float_array id="pPlane2_0_0_Position_array_id" count="12">-2.57582 0.0399856 2.57582 2.57582 0.0399856 2.57582 -2.57582 0.0399856 -2.57582 2.57582 0.0399856 -2.57582</float_array>
+          <technique_common>
+            <accessor source="#pPlane2_0_0_Position_array_id" count="4" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pPlane2_0_0_TexCoord0_id" name="pPlane2_0_0_TexCoord0">
+          <float_array id="pPlane2_0_0_TexCoord0_array_id" count="8">0 0 0.9999996 0 0 0.9999996 0.9999996 0.9999996</float_array>
+          <technique_common>
+            <accessor source="#pPlane2_0_0_TexCoord0_array_id" count="4" stride="2">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pPlane2_0_0_vtx_id">
+          <input semantic="POSITION" source="#pPlane2_0_0_Position_id" />
+        </vertices>
+        <triangles material="Mdl_0_Mtl_lambert318" count="2">
+          <input semantic="VERTEX" source="#pPlane2_0_0_vtx_id" offset="0" />
+          <input semantic="TEXCOORD" source="#pPlane2_0_0_TexCoord0_id" offset="0" set="0" />
+          <p>0 1 2 2 1 3</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_controllers>
+    <controller id="pPlane2_0_0_ctrl_id" name="pPlane2_0_0_ctrl">
+      <skin source="#pPlane2_0_0_geo_id">
+        <bind_shape_matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</bind_shape_matrix>
+        <source id="pPlane2_0_0_ctrl_names_id" name="pPlane2_0_0_ctrl_names">
+          <Name_array id="pPlane2_0_0_ctrl_names_array_id" count="1">pPlane2</Name_array>
+          <technique_common>
+            <accessor source="#pPlane2_0_0_ctrl_names_array_id" count="1" stride="1">
+              <param name="JOINT" type="Name" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pPlane2_0_0_ctrl_poses_id" name="pPlane2_0_0_ctrl_poses">
+          <float_array id="pPlane2_0_0_ctrl_poses_array_id" count="16">1 0 0 0 0 1 0 -0.0199856 0 0 1 0 0 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#pPlane2_0_0_ctrl_poses_array_id" count="1" stride="16">
+              <param name="TRANSFORM" type="float4x4" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pPlane2_0_0_ctrl_weights_id" name="pPlane2_0_0_ctrl_weights">
+          <float_array id="pPlane2_0_0_ctrl_weights_array_id" count="1">1</float_array>
+          <technique_common>
+            <accessor source="#pPlane2_0_0_ctrl_weights_array_id" count="1" stride="1">
+              <param name="WEIGHT" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <joints>
+          <input semantic="JOINT" source="#pPlane2_0_0_ctrl_names_id" />
+          <input semantic="INV_BIND_MATRIX" source="#pPlane2_0_0_ctrl_poses_id" />
+        </joints>
+        <vertex_weights count="4">
+          <input semantic="JOINT" source="#pPlane2_0_0_ctrl_names_id" offset="0" />
+          <input semantic="WEIGHT" source="#pPlane2_0_0_ctrl_weights_id" offset="1" />
+          <vcount>1 1 1 1</vcount>
+          <v>0 0 0 0 0 0 0 0</v>
+        </vertex_weights>
+      </skin>
+    </controller>
+  </library_controllers>
+  <library_visual_scenes>
+    <visual_scene id="EFFCMN_KAGE_00_id" name="EFFCMN_KAGE_00">
+      <node id="pPlane2_bone_id" name="pPlane2" sid="pPlane2" type="JOINT">
+        <translate sid="translate">0 0.0199856 0</translate>
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <scale sid="scale">1 1 1</scale>
+      </node>
+      <node id="pPlane2_0_0_node_id" name="pPlane2_0_0_node" type="NODE">
+        <matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_controller url="#pPlane2_0_0_ctrl_id">
+          <skeleton>#pPlane2_bone_id</skeleton>
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Mdl_0_Mtl_lambert318" target="#lambert318_mat_id" />
+            </technique_common>
+          </bind_material>
+        </instance_controller>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#EFFCMN_KAGE_00_id" />
+  </scene>
+</COLLADA>
